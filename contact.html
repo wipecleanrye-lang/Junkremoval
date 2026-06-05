@@ -3,20 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Free Quote | Clean Up Junk Removal</title>
-  <meta name="description" content="Build a quote message and send photos for junk removal, exterior window cleaning, or pressure washing." />
+  <title>Free Quote Request | Clean Up Junk Removal</title>
+  <meta name="description" content="Submit a free quote request for junk removal, exterior window cleaning, or exterior pressure washing in Rye, Westchester, Greenwich CT, and nearby areas." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="advanced-site.css" />
   <script src="backend-config.js"></script>
   <script defer src="script.js"></script>
+  <script defer src="advanced-quote.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Clean Up Junk Removal",
+    "url": "https://cleanupjunkrye.com",
+    "telephone": "914-306-3677",
+    "areaServed": [
+      "Rye NY",
+      "Westchester County NY",
+      "Greenwich CT",
+      "Port Chester NY",
+      "Harrison NY",
+      "Mamaroneck NY",
+      "White Plains NY"
+    ],
+    "description": "Junk removal with exterior window cleaning and exterior pressure washing services in Rye, Westchester, Greenwich CT, and nearby areas.",
+    "paymentAccepted": ["Cash", "Check", "Venmo", "Zelle"]
+  }
+  </script>
 </head>
 
-<body>
+<body class="advanced-quote-page">
   <div class="progress"><span></span></div>
 
   <div class="topbar">
-    <span>Junk Removal Done Best</span>
-    <span>Exterior Window Cleaning + Pressure Washing</span>
-    <span>Text or Call: <a href="tel:9143063677">914-306-3677</a></span>
+    <span>Free quote requests online</span>
+    <span>Junk Removal • Exterior Windows • Pressure Washing</span>
+    <span>Call: <a href="tel:9143063677">914-306-3677</a></span>
   </div>
 
   <header class="header">
@@ -31,7 +54,7 @@
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="junk-removal.html">Junk Removal</a>
-      <a href="window-cleaning.html">Windows</a>
+      <a href="window-cleaning.html">Window Cleaning</a>
       <a href="power-washing.html">Pressure Washing</a>
       <a href="pricing.html" class="nav-cta nav-pricing">Pricing</a>
       <a href="contact.html" class="active nav-cta nav-quote">Quote</a>
@@ -42,288 +65,350 @@
   </header>
 
   <main>
-    <section class="hero small quote-hero">
-      <div class="hero-bg" style="background-image:url('assets/img/clean-home-exterior-pro.jpg');"></div>
-      <div class="container hero-content reveal">
-        <div class="pill">Smart Quote Builder</div>
-        <p class="eyebrow">Text or Call</p>
-        <h1>Send the perfect quote request.</h1>
-        <p class="hero-text">
-          Pick the service, add job details, upload photos, and submit everything directly into our quote system.
-        </p>
+    <section class="quote-pro-hero">
+      <div class="quote-pro-bg" style="background-image:url('assets/img/junk-removal-pro.jpg');"></div>
+      <div class="quote-pro-overlay"></div>
 
-        <div class="actions">
-          <a class="btn gold" href="tel:9143063677">Call 914-306-3677</a>
-          <a class="btn glass" href="#smartQuote">Build Quote</a>
+      <div class="container quote-pro-hero-grid">
+        <div class="quote-pro-hero-copy reveal">
+          <div class="pill">Free Quote Request</div>
+          <p class="eyebrow">Rye • Westchester • Greenwich CT • Nearby Areas</p>
+          <h1>Submit a quote request with photos and job details.</h1>
+          <p>
+            Fill out the form once. Your request goes directly into our quote system so we can review the job, photos, timing, and service type clearly.
+          </p>
+
+          <div class="quote-pro-actions">
+            <a class="btn gold" href="#quoteFormSection">Start Quote Request</a>
+            <a class="btn glass" href="tel:9143063677">Call 914-306-3677</a>
+          </div>
+
+          <div class="quote-pro-trust-row">
+            <span>✓ Photo uploads</span>
+            <span>✓ Fast review</span>
+            <span>✓ Organized scheduling</span>
+            <span>✓ Zelle • Venmo • Checks • Cash</span>
+          </div>
+        </div>
+
+        <div class="quote-pro-side-card reveal">
+          <strong>Best way to get a quote</strong>
+          <p>Upload wide photos, close-up photos, and access photos. The more clear the request is, the faster it can be reviewed.</p>
+          <ul>
+            <li>Junk volume and access</li>
+            <li>Requested date and time</li>
+            <li>Exterior cleaning surface/details</li>
+            <li>Photos saved with your lead</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section smart-quote-section" id="smartQuote">
+    <section class="section advanced-form-section" id="quoteFormSection">
       <div class="container">
         <div class="heading center reveal">
-          <p class="eyebrow">Smart Quote System</p>
-          <h2>Answer a few quick questions.</h2>
-          <p>The quote request updates live as the customer fills it out.</p>
+          <p class="eyebrow">Quote System</p>
+          <h2>Tell us what you need done.</h2>
+          <p>Your request will be added to our lead dashboard and sorted by service and timing.</p>
         </div>
 
-        <div class="smart-quote-shell reveal">
-          <div class="quote-progress">
-            <div class="quote-progress-step active" data-progress="1">
-              <span>1</span>
-              <strong>Service</strong>
-            </div>
-            <div class="quote-progress-line"></div>
-            <div class="quote-progress-step" data-progress="2">
-              <span>2</span>
-              <strong>Details</strong>
-            </div>
-            <div class="quote-progress-line"></div>
-            <div class="quote-progress-step" data-progress="3">
-              <span>3</span>
-              <strong>Photos</strong>
-            </div>
-            <div class="quote-progress-line"></div>
-            <div class="quote-progress-step" data-progress="4">
-              <span>4</span>
-              <strong>Send</strong>
-            </div>
+        <div class="advanced-quote-shell reveal">
+          <div class="advanced-steps">
+            <div class="advanced-step active" data-step-indicator="1"><span>1</span><strong>Service</strong></div>
+            <div class="advanced-step-line"></div>
+            <div class="advanced-step" data-step-indicator="2"><span>2</span><strong>Details</strong></div>
+            <div class="advanced-step-line"></div>
+            <div class="advanced-step" data-step-indicator="3"><span>3</span><strong>Photos</strong></div>
+            <div class="advanced-step-line"></div>
+            <div class="advanced-step" data-step-indicator="4"><span>4</span><strong>Submit</strong></div>
           </div>
 
-          <div class="smart-quote-grid">
-            <form class="smart-quote-form" id="smartQuoteForm">
-              <section class="quote-step active" data-step="1">
+          <div class="advanced-quote-layout">
+            <form class="advanced-quote-form" id="quoteForm" novalidate>
+              <input type="text" id="website" class="quote-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <input type="hidden" id="qService" value="Junk Removal">
+
+              <section class="advanced-form-panel active" data-panel="1">
                 <p class="eyebrow">Step 1</p>
-                <h3>What do you need?</h3>
+                <h3>Choose the service.</h3>
 
-                <div class="quote-service-cards">
-                  <button type="button" class="quote-service-card active" data-quote-service="Junk Removal">
-                    <span>Best Service</span>
+                <div class="advanced-service-grid">
+                  <button type="button" class="advanced-service-card active" data-service="Junk Removal" data-group="junk">
+                    <span>Main Service</span>
                     <strong>Junk Removal</strong>
-                    <small>Furniture, cleanouts, bulky junk</small>
+                    <small>Furniture, cleanouts, bulky items, garage junk, move-out junk.</small>
                   </button>
 
-                  <button type="button" class="quote-service-card" data-quote-service="Exterior Window Cleaning">
-                    <span>Add-On</span>
-                    <strong>Exterior Windows</strong>
-                    <small>Outside-facing glass only</small>
+                  <button type="button" class="advanced-service-card" data-service="Exterior Window Cleaning" data-group="windows">
+                    <span>Exterior Cleaning</span>
+                    <strong>Exterior Window Cleaning</strong>
+                    <small>Outside-facing glass, screens, sills, and exterior buildup.</small>
                   </button>
 
-                  <button type="button" class="quote-service-card" data-quote-service="Exterior Pressure Washing">
-                    <span>Add-On</span>
+                  <button type="button" class="advanced-service-card" data-service="Exterior Pressure Washing" data-group="washing">
+                    <span>Exterior Cleaning</span>
                     <strong>Pressure Washing</strong>
-                    <small>Driveways, patios, walkways</small>
+                    <small>Driveways, walkways, patios, trash-bin areas, and outdoor hard surfaces.</small>
                   </button>
 
-                  <button type="button" class="quote-service-card" data-quote-service="Junk Removal + Exterior Add-On">
+                  <button type="button" class="advanced-service-card" data-service="Multiple Services" data-group="multiple">
                     <span>Bundle</span>
                     <strong>Multiple Services</strong>
-                    <small>Junk + exterior cleaning</small>
+                    <small>Junk removal plus exterior window cleaning or pressure washing.</small>
                   </button>
                 </div>
 
-                <div class="quote-next-row">
-                  <button type="button" class="btn primary quote-next" data-next="2">Next: Job Details</button>
+                <div class="advanced-nav-row">
+                  <button type="button" class="btn primary quote-next" data-next-panel="2">Next: Contact Details</button>
                 </div>
               </section>
 
-              <section class="quote-step" data-step="2">
+              <section class="advanced-form-panel" data-panel="2">
                 <p class="eyebrow">Step 2</p>
-                <h3>Tell us about the job.</h3>
+                <h3>Contact and timing.</h3>
 
-                <div class="quote-two-col">
-                  <label>Name
-                    <input id="qName" type="text" placeholder="Your name">
+                <div class="advanced-field-grid">
+                  <label>Name <span>*</span>
+                    <input id="qName" type="text" placeholder="Your name" autocomplete="name" required>
                   </label>
 
-                  <label>Town
-                    <input id="qTown" type="text" placeholder="Rye, Greenwich, White Plains...">
+                  <label>Phone <span>*</span>
+                    <input id="qPhone" type="tel" placeholder="914-306-3677" autocomplete="tel" required>
                   </label>
 
-                  <label>Phone
-                    <input id="qPhone" type="tel" placeholder="914-306-3677">
+                  <label>Town <span>*</span>
+                    <input id="qTown" type="text" placeholder="Rye, Greenwich, White Plains..." autocomplete="address-level2" required>
                   </label>
                 </div>
 
-                <label>Preferred timing
-                  <select id="qTiming">
-                    <option>Flexible timing</option>
-                    <option>This week if available</option>
-                    <option>Next available opening</option>
-                    <option>Weekend if available</option>
-                  </select>
-                </label>
-
-                <div id="junkQuestions" class="smart-question-group active">
-                  <label>Junk job size
-                    <select id="qJunkSize">
-                      <option>Minimum pickup</option>
-                      <option>Single large item</option>
-                      <option>Small pickup</option>
-                      <option>Medium load</option>
-                      <option>Large load</option>
-                      <option>Full load</option>
-                      <option>Cleanout</option>
+                <div class="advanced-field-grid">
+                  <label>Preferred timing
+                    <select id="qTiming">
+                      <option>Flexible timing</option>
+                      <option>ASAP if available</option>
+                      <option>Today if available</option>
+                      <option>Tomorrow if available</option>
+                      <option>This week if available</option>
+                      <option>Next available opening</option>
+                      <option>Weekend if available</option>
                     </select>
                   </label>
 
-                  <label>Access
-                    <select id="qJunkAccess">
-                      <option>Curbside / easy access</option>
-                      <option>Inside pickup</option>
-                      <option>Stairs involved</option>
-                      <option>Long carry</option>
-                      <option>Heavy items</option>
+                  <label>When do you need it done?
+                    <input id="qRequestedDate" type="date">
+                  </label>
+
+                  <label>Best time of day
+                    <select id="qRequestedTime">
+                      <option>Flexible</option>
+                      <option>Morning</option>
+                      <option>Afternoon</option>
+                      <option>Evening</option>
+                      <option>Weekend if available</option>
                     </select>
                   </label>
                 </div>
 
-                <div id="windowQuestions" class="smart-question-group">
-                  <label>Approx. exterior windows
-                    <select id="qWindowCount">
-                      <option>Not sure</option>
-                      <option>Up to 15</option>
-                      <option>Up to 20</option>
-                      <option>Up to 30</option>
-                      <option>More than 30</option>
-                    </select>
-                  </label>
-
-                  <label>Window add-ons
-                    <select id="qWindowExtras">
-                      <option>Exterior glass only</option>
-                      <option>Screens included</option>
-                      <option>Sills included</option>
-                      <option>Screens and sills included</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div id="washingQuestions" class="smart-question-group">
-                  <label>Surface
-                    <select id="qWashSurface">
-                      <option>Driveway</option>
-                      <option>Walkway</option>
-                      <option>Patio</option>
-                      <option>Multiple outdoor areas</option>
+                <div class="advanced-field-grid">
+                  <label>Property / access type
+                    <select id="qPropertyType">
+                      <option>House / driveway access</option>
+                      <option>Apartment / building</option>
+                      <option>Condo / townhouse</option>
+                      <option>Garage / storage area</option>
+                      <option>Business / commercial</option>
                       <option>Not sure</option>
                     </select>
                   </label>
 
-                  <label>Condition
-                    <select id="qWashCondition">
-                      <option>Light dirt</option>
-                      <option>Moderate buildup</option>
-                      <option>Heavy buildup</option>
-                      <option>Stains / algae / problem spots</option>
+                  <label>Best contact method
+                    <select id="qContactMethod">
+                      <option>Call or text is fine</option>
+                      <option>Call preferred</option>
+                      <option>Text preferred</option>
                     </select>
                   </label>
+
+                  <label>How clear are the photos/details?
+                    <select id="qClarity">
+                      <option>I can upload photos</option>
+                      <option>I do not have photos yet</option>
+                      <option>I need help explaining the job</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="advanced-nav-row">
+                  <button type="button" class="btn light quote-back" data-prev-panel="1">Back</button>
+                  <button type="button" class="btn primary quote-next" data-next-panel="3">Next: Job Details</button>
+                </div>
+              </section>
+
+              <section class="advanced-form-panel" data-panel="3">
+                <p class="eyebrow">Step 3</p>
+                <h3>Job details.</h3>
+
+                <div class="question-group active" data-question-group="junk">
+                  <div class="advanced-field-grid">
+                    <label>Junk job size
+                      <select id="qJunkSize">
+                        <option>Minimum pickup</option>
+                        <option>Single large item</option>
+                        <option>Small pickup</option>
+                        <option>Medium load</option>
+                        <option>Large load</option>
+                        <option>Full load</option>
+                        <option>Cleanout</option>
+                        <option>Not sure</option>
+                      </select>
+                    </label>
+
+                    <label>Junk access
+                      <select id="qJunkAccess">
+                        <option>Curbside / easy access</option>
+                        <option>Inside pickup</option>
+                        <option>Stairs involved</option>
+                        <option>Long carry</option>
+                        <option>Heavy items</option>
+                        <option>Mixed access</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="question-group" data-question-group="windows">
+                  <div class="advanced-field-grid">
+                    <label>Approx. exterior windows
+                      <select id="qWindowCount">
+                        <option>Not sure</option>
+                        <option>Up to 15</option>
+                        <option>Up to 20</option>
+                        <option>Up to 30</option>
+                        <option>More than 30</option>
+                      </select>
+                    </label>
+
+                    <label>Exterior window extras
+                      <select id="qWindowExtras">
+                        <option>Exterior glass only</option>
+                        <option>Screens included</option>
+                        <option>Sills included</option>
+                        <option>Screens and sills included</option>
+                        <option>Not sure</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="question-group" data-question-group="washing">
+                  <div class="advanced-field-grid">
+                    <label>Pressure washing surface
+                      <select id="qWashSurface">
+                        <option>Driveway</option>
+                        <option>Walkway</option>
+                        <option>Patio</option>
+                        <option>Trash-bin area</option>
+                        <option>Multiple outdoor areas</option>
+                        <option>Not sure</option>
+                      </select>
+                    </label>
+
+                    <label>Surface condition
+                      <select id="qWashCondition">
+                        <option>Light dirt</option>
+                        <option>Moderate buildup</option>
+                        <option>Heavy buildup</option>
+                        <option>Stains / algae / problem spots</option>
+                        <option>Not sure</option>
+                      </select>
+                    </label>
+                  </div>
                 </div>
 
                 <label>Extra details
-                  <textarea id="qDetails" placeholder="Example: couch and mattress inside apartment, 1 flight of stairs, flexible this week"></textarea>
+                  <textarea id="qDetails" rows="6" placeholder="Example: couch and mattress inside apartment, 1 flight of stairs, flexible this week. Or: driveway has dark buildup and I can upload photos."></textarea>
                 </label>
 
-                <div class="quote-next-row">
-                  <button type="button" class="btn light quote-back" data-back="1">Back</button>
-                  <button type="button" class="btn primary quote-next" data-next="3">Next: Photos</button>
+                <div class="advanced-nav-row">
+                  <button type="button" class="btn light quote-back" data-prev-panel="2">Back</button>
+                  <button type="button" class="btn primary quote-next" data-next-panel="4">Next: Photos & Submit</button>
                 </div>
               </section>
 
-              <section class="quote-step" data-step="3">
-                <p class="eyebrow">Step 3</p>
-                <h3>Add photos for a faster quote.</h3>
+              <section class="advanced-form-panel" data-panel="4">
+                <p class="eyebrow">Step 4</p>
+                <h3>Photos and submit.</h3>
 
-                <div class="photo-instructions">
-                  <strong>Best photos to send:</strong>
-                  <span>Wide photo • Close-up photo • Stairs/access photo • Heavy item photo • Outdoor surface photo</span>
+                <div class="advanced-photo-help">
+                  <strong>Best photos to upload:</strong>
+                  <span>Wide photo • close-up photo • stairs/access photo • heavy item photo • full surface photo.</span>
                 </div>
 
                 <label>Upload photos
-                  <input id="qPhotos" type="file" accept="image/*" multiple capture="environment">
+                  <input id="qPhotos" type="file" accept="image/*" multiple>
                 </label>
 
-                <div class="smart-photo-list" id="smartPhotoList">
-                  No photos selected yet.
+                <div class="advanced-photo-preview" id="photoPreview">
+                  <p>No photos selected yet.</p>
                 </div>
 
-                <div class="photo-checklist">
+                <div class="advanced-check-grid">
                   <label><input type="checkbox" class="qCheck" value="wide photos"> Wide photos</label>
                   <label><input type="checkbox" class="qCheck" value="close-up photos"> Close-ups</label>
-                  <label><input type="checkbox" class="qCheck" value="stairs or access photos"> Stairs/access</label>
+                  <label><input type="checkbox" class="qCheck" value="stairs/access photos"> Stairs/access</label>
                   <label><input type="checkbox" class="qCheck" value="heavy item photos"> Heavy items</label>
                 </div>
 
-                <div class="quote-next-row">
-                  <button type="button" class="btn light quote-back" data-back="2">Back</button>
-                  <button type="button" class="btn primary quote-next" data-next="4">Next: Send</button>
-                </div>
-              </section>
+                <div class="advanced-submit-card">
+                  <div>
+                    <strong>Ready to send?</strong>
+                    <p>This goes directly into our quote system and Google Sheet lead board.</p>
+                  </div>
 
-              <section class="quote-step" data-step="4">
-                <p class="eyebrow">Step 4</p>
-                <h3>Send the quote request.</h3>
-
-                <div class="send-options-grid">
-                  <button type="button" class="send-option best submit-lead-option" id="qSubmitLead">
-                    <span>Best Option</span>
-                    <strong>Submit Quote Request</strong>
-                    <small>Sends the form directly into our quote system.</small>
+                  <button type="submit" class="btn gold advanced-submit" id="quoteSubmit">
+                    Submit Quote Request
                   </button>
-
-                  <button type="button" class="send-option best" id="qShare">
-                    <span>Best on Phone</span>
-                    <strong>Share Photos + Message</strong>
-                    <small></small>
-                  </button>
-
-                  <button type="button" class="send-option" id="qCopy">
-                    <span>Quick</span>
-                    <strong>Copy Details</strong>
-                    <small>Backup option if needed.</small>
-                  </button>
-
-                  <a class="send-option" href="tel:9143063677">
-                    <span>Direct</span>
-                    <strong>Call Now</strong>
-                    <small>914-306-3677</small>
-                  </a>
                 </div>
 
-                <div class="native-share-status backend-submit-status" id="backendSubmitStatus">
-                  Fill out the form, upload photos if you have them, then click Submit Quote Request.
+                <div class="advanced-status" id="quoteStatus">
+                  Fill out the required fields, then submit the quote request.
                 </div>
 
-                <div class="native-share-status" id="qStatus">
-                  Submit the form and your quote request will go directly into our system.
-                </div>
-
-                <div class="quote-next-row">
-                  <button type="button" class="btn light quote-back" data-back="3">Back</button>
+                <div class="advanced-nav-row">
+                  <button type="button" class="btn light quote-back" data-prev-panel="3">Back</button>
+                  <a class="btn dark" href="tel:9143063677">Call Instead</a>
                 </div>
               </section>
             </form>
 
-            <aside class="quote-preview-panel">
-              <div class="quote-preview-sticky">
-                <p class="eyebrow">Live Preview</p>
+            <aside class="advanced-preview">
+              <div class="advanced-preview-sticky">
+                <p class="eyebrow">Live Request Preview</p>
                 <h3>Quote request</h3>
 
-                <div class="quote-score">
-                  <span>Quote quality</span>
-                  <div class="quote-score-bar"><div id="quoteScoreFill"></div></div>
+                <div class="advanced-priority-box" id="priorityBox">
+                  <span>Priority</span>
+                  <strong>Normal</strong>
+                  <small>Timing and requested date decide if this becomes a Hot Lead.</small>
+                </div>
+
+                <div class="advanced-score">
+                  <span>Request quality</span>
+                  <div><i id="quoteScoreFill"></i></div>
                   <strong id="quoteScoreText">Good start</strong>
                 </div>
 
-                <pre id="qPreview">Fill out the quote builder and your message will appear here.</pre>
+                <pre id="quotePreview">Start the form and your quote request preview will appear here.</pre>
 
-                <div class="quote-mini-actions">
-                  <button type="button" class="btn gold" id="qCopyMini">Copy</button>
+                <div class="advanced-mini-info">
+                  <strong>Payments accepted</strong>
+                  <span>Zelle • Venmo • Checks • Cash</span>
                 </div>
 
-                <div class="quote-trust-box">
-                  <strong>Payments accepted:</strong>
-                  <span>Zelle • Venmo • Checks • Cash</span>
+                <div class="advanced-mini-info">
+                  <strong>Service area</strong>
+                  <span>Rye, Westchester, Greenwich CT, and nearby areas.</span>
                 </div>
               </div>
             </aside>
@@ -332,16 +417,28 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container area-box reveal">
-        <div>
-          <p class="eyebrow">Service Area</p>
-          <h2>Serving Rye, Westchester, Greenwich CT & nearby areas.</h2>
-          <p>Text photos and your town to check availability.</p>
+    <section class="section advanced-faq-section">
+      <div class="container">
+        <div class="heading center reveal">
+          <p class="eyebrow">Before You Submit</p>
+          <h2>What helps us quote faster?</h2>
         </div>
 
-        <div class="areas">
-          <span>Rye</span><span>Rye Brook</span><span>Port Chester</span><span>Harrison</span><span>Mamaroneck</span><span>Larchmont</span><span>White Plains</span><span>Scarsdale</span><span>New Rochelle</span><span>Yonkers</span><span>Greenwich CT</span><span>Old Greenwich CT</span><span>Riverside CT</span><span>Byram CT</span><span>Nearby Fairfield County</span><span>Westchester County</span>
+        <div class="advanced-info-grid reveal">
+          <article>
+            <strong>For junk removal</strong>
+            <p>Send photos showing the full pile, heavy items, stairs, and how close we can park.</p>
+          </article>
+
+          <article>
+            <strong>For pressure washing</strong>
+            <p>Send the full surface, close-ups of buildup, and whether there is outdoor water access.</p>
+          </article>
+
+          <article>
+            <strong>For exterior windows</strong>
+            <p>Send a front/back view of the house and the approximate number of outside-facing windows.</p>
+          </article>
         </div>
       </div>
     </section>

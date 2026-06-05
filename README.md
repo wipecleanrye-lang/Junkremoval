@@ -25,3 +25,15 @@ Zelle • Venmo • Checks • Cash
 ## Publish
 
 Settings → Pages → Deploy from branch → main → /root → Save
+
+
+## Advanced quote system
+
+The website now uses:
+- `contact.html` for the full quote request flow
+- `advanced-site.css` for the advanced quote page and trust sections
+- `advanced-quote.js` for form validation, photo compression, preview, priority detection, and Google Apps Script submission
+- `backend-config.js` for the Google Apps Script web app URL
+
+After Apps Script backend changes, redeploy the web app from:
+Deploy → Manage deployments → Edit → New version → Deploy
