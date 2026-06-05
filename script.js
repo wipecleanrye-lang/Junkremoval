@@ -407,7 +407,7 @@ async function sharePhotosAndMessage() {
 
   if (!navigator.share) {
     setShareStatus("Your browser does not support photo sharing from the website. Use Text Us, then attach the photos manually.");
-    if (textMessage) window.location.href = textMessage.href;
+    if (preview) preview.textContent = "Please submit the quote form or call us directly.";
     return;
   }
 
@@ -428,7 +428,7 @@ async function sharePhotosAndMessage() {
         return;
       } catch (secondError) {
         setShareStatus("Photo sharing was canceled or not supported. Use Text Us and attach photos manually.");
-        if (textMessage) window.location.href = textMessage.href;
+        if (preview) preview.textContent = "Please submit the quote form or call us directly.";
       }
     }
   } else {
@@ -440,7 +440,7 @@ async function sharePhotosAndMessage() {
       setShareStatus("Message shared. Attach photos manually if they did not transfer.");
     } catch (error) {
       setShareStatus("Sharing was canceled or not supported. Use Text Us and attach photos manually.");
-      if (textMessage) window.location.href = textMessage.href;
+      if (preview) preview.textContent = "Please submit the quote form or call us directly.";
     }
   }
 }
@@ -761,8 +761,8 @@ Thank you.`;
     } catch (e) {}
 
     if (!navigator.share) {
-      if (qStatus) qStatus.textContent = "Your browser does not support photo sharing from the website. Use Text Message, then attach photos manually.";
-      if (qText) window.location.href = qText.href;
+      if (qStatus) qStatus.textContent = "Please use Submit Quote Request to send the form directly.";
+      if (qStatus) qStatus.textContent = "Please submit the quote form or call us directly.";
       return;
     }
 
@@ -782,8 +782,8 @@ Thank you.`;
           if (qStatus) qStatus.textContent = "Photos shared. The quote message was copied, so paste it into Messages if needed.";
           return;
         } catch (secondError) {
-          if (qStatus) qStatus.textContent = "Photo sharing was canceled or not supported. Use Text Message and attach photos manually.";
-          if (qText) window.location.href = qText.href;
+          if (qStatus) qStatus.textContent = "Please use Submit Quote Request to send the form directly.";
+          if (qStatus) qStatus.textContent = "Please submit the quote form or call us directly.";
           return;
         }
       }
@@ -798,7 +798,7 @@ Thank you.`;
       if (qStatus) qStatus.textContent = "Message shared. Attach photos manually if they did not transfer.";
     } catch (error) {
       if (qStatus) qStatus.textContent = "Sharing was canceled or not supported. Use Text Message and attach photos manually.";
-      if (qText) window.location.href = qText.href;
+      if (qStatus) qStatus.textContent = "Please submit the quote form or call us directly.";
     }
   }
 
@@ -1037,7 +1037,7 @@ Thank you.`;
       setBackendStatus("Quote request submitted. We’ll review it and reach out soon.", "success");
 
     } catch (error) {
-      setBackendStatus("Something went wrong. Please use Send Directly To Us or call instead.", "error");
+      setBackendStatus("Something went wrong. Please call us or try submitting again.", "error");
     } finally {
       submitButton.disabled = false;
       submitButton.style.opacity = "1";

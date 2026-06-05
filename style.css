@@ -1930,3 +1930,28 @@ input[type="file"] {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* ===== Remove text fallback and make quote submit cleaner ===== */
+
+.send-options-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.submit-lead-option {
+  min-height: 155px;
+}
+
+.submit-lead-option strong {
+  font-size: 22px;
+}
+
+.quote-preview-panel .quote-mini-actions {
+  grid-template-columns: 1fr;
+}
+
+@media(max-width: 700px) {
+  .send-options-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
