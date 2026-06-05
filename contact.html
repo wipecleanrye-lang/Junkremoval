@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Free Quote | Clean Up Junk Removal</title>
-  <meta name="description" content="Build a quote message and select photos for Clean Up Junk Removal in Westchester." />
+  <meta name="description" content="Build a quote message and send photos for junk removal, exterior window cleaning, or pressure washing." />
   <link rel="stylesheet" href="style.css" />
+  <script src="backend-config.js"></script>
   <script defer src="script.js"></script>
 </head>
 
 <body>
-
   <div class="progress"><span></span></div>
 
   <div class="topbar">
@@ -28,96 +28,314 @@
       </span>
     </a>
 
-    
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="junk-removal.html">Junk Removal</a>
-  <a href="window-cleaning.html">Windows</a>
-  <a href="power-washing.html">Pressure Washing</a>
-  <a href="pricing.html" class="nav-cta nav-pricing">Pricing</a>
-  <a href="contact.html" class="nav-cta nav-quote">Quote</a>
-</nav>
-
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="junk-removal.html">Junk Removal</a>
+      <a href="window-cleaning.html">Windows</a>
+      <a href="power-washing.html">Pressure Washing</a>
+      <a href="pricing.html" class="nav-cta nav-pricing">Pricing</a>
+      <a href="contact.html" class="active nav-cta nav-quote">Quote</a>
+    </nav>
 
     <a class="phone" href="tel:9143063677">914-306-3677</a>
-
     <button class="menu" id="menu" aria-label="Open menu">☰</button>
   </header>
 
-
   <main>
-    <section class="hero small">
-      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85');"></div>
-
+    <section class="hero small quote-hero">
+      <div class="hero-bg" style="background-image:url('assets/img/clean-home-exterior-pro.jpg');"></div>
       <div class="container hero-content reveal">
-        <div class="pill">Free Quote</div>
+        <div class="pill">Smart Quote Builder</div>
         <p class="eyebrow">Text or Call</p>
-        <h1>Send photos. Get a quote.</h1>
+        <h1>Send the perfect quote request.</h1>
         <p class="hero-text">
-          Use the form below to build a text message. Select photos so the message reminds you to attach them.
+          Pick the service, add job details, upload photos, and the website builds a clean text message for you.
         </p>
+
+        <div class="actions">
+          <a class="btn gold" href="tel:9143063677">Call 914-306-3677</a>
+          <a class="btn glass" href="#smartQuote">Build Quote</a>
+        </div>
       </div>
     </section>
 
-    <section class="section soft">
-      <div class="container quote-grid">
-        <div class="reveal">
-          <p class="eyebrow">Quote Builder</p>
-          <h2>Build the text message.</h2>
-          <p>
-            Photos make the quote faster and more accurate. After the texting app opens,
-            attach the photos you selected.
-          </p>
-
-          
-          <div class="payment-methods-box">
-            <strong>Payments accepted:</strong>
-            <span>Zelle • Venmo • Checks • Cash</span>
-          </div>
-
-          <div class="photo-help">
-            <strong>Photo tip:</strong>
-            Take wide photos, close-up photos, stairs/access photos, and anything heavy or unusual.
-          </div>
+    <section class="section smart-quote-section" id="smartQuote">
+      <div class="container">
+        <div class="heading center reveal">
+          <p class="eyebrow">Smart Quote System</p>
+          <h2>Answer a few quick questions.</h2>
+          <p>The message updates live as the customer fills it out.</p>
         </div>
 
-        <form class="quote-form reveal">
-          <label>Name
-            <input id="name" type="text" placeholder="Your name">
-          </label>
-
-          <label>Town
-            <input id="town" type="text" placeholder="Rye, White Plains, Yonkers...">
-          </label>
-
-          <label>Service
-            <select id="service">
-              <option>Junk Removal</option>
-              <option>Exterior Window Cleaning</option>
-              <option>Exterior Pressure Washing</option>
-              <option>Junk Removal + Exterior Add-On</option>
-            </select>
-          </label>
-
-          <label>Photos
-            <input id="photoUpload" type="file" accept="image/*" multiple>
-          </label>
-
-          <div class="photo-list" id="photoList">
-            No photos selected yet.
+        <div class="smart-quote-shell reveal">
+          <div class="quote-progress">
+            <div class="quote-progress-step active" data-progress="1">
+              <span>1</span>
+              <strong>Service</strong>
+            </div>
+            <div class="quote-progress-line"></div>
+            <div class="quote-progress-step" data-progress="2">
+              <span>2</span>
+              <strong>Details</strong>
+            </div>
+            <div class="quote-progress-line"></div>
+            <div class="quote-progress-step" data-progress="3">
+              <span>3</span>
+              <strong>Photos</strong>
+            </div>
+            <div class="quote-progress-line"></div>
+            <div class="quote-progress-step" data-progress="4">
+              <span>4</span>
+              <strong>Send</strong>
+            </div>
           </div>
 
-          <label>Details
-            <textarea id="details" placeholder="Example: couch and mattress, 1 flight of stairs, flexible this week"></textarea>
-          </label>
+          <div class="smart-quote-grid">
+            <form class="smart-quote-form" id="smartQuoteForm">
+              <section class="quote-step active" data-step="1">
+                <p class="eyebrow">Step 1</p>
+                <h3>What do you need?</h3>
 
-          <div class="form-buttons">
-            <button class="btn primary" type="button" id="copyMessage">Copy Message</button>
-            <a class="btn dark" id="textMessage" href="sms:9143063677">Text Us</a>
+                <div class="quote-service-cards">
+                  <button type="button" class="quote-service-card active" data-quote-service="Junk Removal">
+                    <span>Best Service</span>
+                    <strong>Junk Removal</strong>
+                    <small>Furniture, cleanouts, bulky junk</small>
+                  </button>
+
+                  <button type="button" class="quote-service-card" data-quote-service="Exterior Window Cleaning">
+                    <span>Add-On</span>
+                    <strong>Exterior Windows</strong>
+                    <small>Outside-facing glass only</small>
+                  </button>
+
+                  <button type="button" class="quote-service-card" data-quote-service="Exterior Pressure Washing">
+                    <span>Add-On</span>
+                    <strong>Pressure Washing</strong>
+                    <small>Driveways, patios, walkways</small>
+                  </button>
+
+                  <button type="button" class="quote-service-card" data-quote-service="Junk Removal + Exterior Add-On">
+                    <span>Bundle</span>
+                    <strong>Multiple Services</strong>
+                    <small>Junk + exterior cleaning</small>
+                  </button>
+                </div>
+
+                <div class="quote-next-row">
+                  <button type="button" class="btn primary quote-next" data-next="2">Next: Job Details</button>
+                </div>
+              </section>
+
+              <section class="quote-step" data-step="2">
+                <p class="eyebrow">Step 2</p>
+                <h3>Tell us about the job.</h3>
+
+                <div class="quote-two-col">
+                  <label>Name
+                    <input id="qName" type="text" placeholder="Your name">
+                  </label>
+
+                  <label>Town
+                    <input id="qTown" type="text" placeholder="Rye, Greenwich, White Plains...">
+                  </label>
+
+                  <label>Phone
+                    <input id="qPhone" type="tel" placeholder="914-306-3677">
+                  </label>
+                </div>
+
+                <label>Preferred timing
+                  <select id="qTiming">
+                    <option>Flexible timing</option>
+                    <option>This week if available</option>
+                    <option>Next available opening</option>
+                    <option>Weekend if available</option>
+                  </select>
+                </label>
+
+                <div id="junkQuestions" class="smart-question-group active">
+                  <label>Junk job size
+                    <select id="qJunkSize">
+                      <option>Minimum pickup</option>
+                      <option>Single large item</option>
+                      <option>Small pickup</option>
+                      <option>Medium load</option>
+                      <option>Large load</option>
+                      <option>Full load</option>
+                      <option>Cleanout</option>
+                    </select>
+                  </label>
+
+                  <label>Access
+                    <select id="qJunkAccess">
+                      <option>Curbside / easy access</option>
+                      <option>Inside pickup</option>
+                      <option>Stairs involved</option>
+                      <option>Long carry</option>
+                      <option>Heavy items</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div id="windowQuestions" class="smart-question-group">
+                  <label>Approx. exterior windows
+                    <select id="qWindowCount">
+                      <option>Not sure</option>
+                      <option>Up to 15</option>
+                      <option>Up to 20</option>
+                      <option>Up to 30</option>
+                      <option>More than 30</option>
+                    </select>
+                  </label>
+
+                  <label>Window add-ons
+                    <select id="qWindowExtras">
+                      <option>Exterior glass only</option>
+                      <option>Screens included</option>
+                      <option>Sills included</option>
+                      <option>Screens and sills included</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div id="washingQuestions" class="smart-question-group">
+                  <label>Surface
+                    <select id="qWashSurface">
+                      <option>Driveway</option>
+                      <option>Walkway</option>
+                      <option>Patio</option>
+                      <option>Multiple outdoor areas</option>
+                      <option>Not sure</option>
+                    </select>
+                  </label>
+
+                  <label>Condition
+                    <select id="qWashCondition">
+                      <option>Light dirt</option>
+                      <option>Moderate buildup</option>
+                      <option>Heavy buildup</option>
+                      <option>Stains / algae / problem spots</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>Extra details
+                  <textarea id="qDetails" placeholder="Example: couch and mattress inside apartment, 1 flight of stairs, flexible this week"></textarea>
+                </label>
+
+                <div class="quote-next-row">
+                  <button type="button" class="btn light quote-back" data-back="1">Back</button>
+                  <button type="button" class="btn primary quote-next" data-next="3">Next: Photos</button>
+                </div>
+              </section>
+
+              <section class="quote-step" data-step="3">
+                <p class="eyebrow">Step 3</p>
+                <h3>Add photos for a faster quote.</h3>
+
+                <div class="photo-instructions">
+                  <strong>Best photos to send:</strong>
+                  <span>Wide photo • Close-up photo • Stairs/access photo • Heavy item photo • Outdoor surface photo</span>
+                </div>
+
+                <label>Upload photos
+                  <input id="qPhotos" type="file" accept="image/*" multiple capture="environment">
+                </label>
+
+                <div class="smart-photo-list" id="smartPhotoList">
+                  No photos selected yet.
+                </div>
+
+                <div class="photo-checklist">
+                  <label><input type="checkbox" class="qCheck" value="wide photos"> Wide photos</label>
+                  <label><input type="checkbox" class="qCheck" value="close-up photos"> Close-ups</label>
+                  <label><input type="checkbox" class="qCheck" value="stairs or access photos"> Stairs/access</label>
+                  <label><input type="checkbox" class="qCheck" value="heavy item photos"> Heavy items</label>
+                </div>
+
+                <div class="quote-next-row">
+                  <button type="button" class="btn light quote-back" data-back="2">Back</button>
+                  <button type="button" class="btn primary quote-next" data-next="4">Next: Send</button>
+                </div>
+              </section>
+
+              <section class="quote-step" data-step="4">
+                <p class="eyebrow">Step 4</p>
+                <h3>Send the quote request.</h3>
+
+                <div class="send-options-grid">
+                  <button type="button" class="send-option best submit-lead-option" id="qSubmitLead">
+                    <span>Best Option</span>
+                    <strong>Submit Quote Request</strong>
+                    <small>Sends the form directly into our quote system.</small>
+                  </button>
+
+                  <button type="button" class="send-option best" id="qShare">
+                    <span>Best on Phone</span>
+                    <strong>Share Photos + Message</strong>
+                    <small>Opens your phone share sheet. Choose Messages.</small>
+                  </button>
+
+                  <a class="send-option" id="qText" href="sms:9143063677">
+                    <span>Fallback</span>
+                    <strong>Send Directly To Us</strong>
+                    <small>Opens a text. Attach photos manually.</small>
+                  </a>
+
+                  <button type="button" class="send-option" id="qCopy">
+                    <span>Quick</span>
+                    <strong>Copy Message</strong>
+                    <small>Copy and paste anywhere.</small>
+                  </button>
+
+                  <a class="send-option" href="tel:9143063677">
+                    <span>Direct</span>
+                    <strong>Call Now</strong>
+                    <small>914-306-3677</small>
+                  </a>
+                </div>
+
+                <div class="native-share-status backend-submit-status" id="backendSubmitStatus">
+                  Fill out the form, then click Submit Quote Request.
+                </div>
+
+                <div class="native-share-status" id="qStatus">
+                  Tip: On iPhone or Android, use Share Photos + Message, then choose Messages.
+                </div>
+
+                <div class="quote-next-row">
+                  <button type="button" class="btn light quote-back" data-back="3">Back</button>
+                </div>
+              </section>
+            </form>
+
+            <aside class="quote-preview-panel">
+              <div class="quote-preview-sticky">
+                <p class="eyebrow">Live Preview</p>
+                <h3>Your message</h3>
+
+                <div class="quote-score">
+                  <span>Quote quality</span>
+                  <div class="quote-score-bar"><div id="quoteScoreFill"></div></div>
+                  <strong id="quoteScoreText">Good start</strong>
+                </div>
+
+                <pre id="qPreview">Fill out the quote builder and your message will appear here.</pre>
+
+                <div class="quote-mini-actions">
+                  <button type="button" class="btn gold" id="qCopyMini">Copy</button>
+                  <a class="btn dark" id="qTextMini" href="sms:9143063677">Text</a>
+                </div>
+
+                <div class="quote-trust-box">
+                  <strong>Payments accepted:</strong>
+                  <span>Zelle • Venmo • Checks • Cash</span>
+                </div>
+              </div>
+            </aside>
           </div>
-
-          <div class="preview" id="messagePreview">Fill this out and click Copy Message.</div>
-        </form>
+        </div>
       </div>
     </section>
 
@@ -129,30 +347,12 @@
           <p>Text photos and your town to check availability.</p>
         </div>
 
-        
-<div class="areas">
-  <span>Rye</span>
-  <span>Rye Brook</span>
-  <span>Port Chester</span>
-  <span>Harrison</span>
-  <span>Mamaroneck</span>
-  <span>Larchmont</span>
-  <span>White Plains</span>
-  <span>Scarsdale</span>
-  <span>New Rochelle</span>
-  <span>Yonkers</span>
-  <span>Greenwich CT</span>
-  <span>Old Greenwich CT</span>
-  <span>Riverside CT</span>
-  <span>Byram CT</span>
-  <span>Nearby Fairfield County</span>
-  <span>Westchester County</span>
-</div>
-
+        <div class="areas">
+          <span>Rye</span><span>Rye Brook</span><span>Port Chester</span><span>Harrison</span><span>Mamaroneck</span><span>Larchmont</span><span>White Plains</span><span>Scarsdale</span><span>New Rochelle</span><span>Yonkers</span><span>Greenwich CT</span><span>Old Greenwich CT</span><span>Riverside CT</span><span>Byram CT</span><span>Nearby Fairfield County</span><span>Westchester County</span>
+        </div>
       </div>
     </section>
   </main>
-
 
   <footer class="footer">
     <div>
@@ -164,6 +364,5 @@
 
     <a href="tel:9143063677">914-306-3677</a>
   </footer>
-
 </body>
 </html>

@@ -1,13 +1,17 @@
 # Clean Up Junk Removal Website
 
-Short premium multi-page website for GitHub Pages.
+Professional multi-page website for GitHub Pages.
 
 ## Business
 
 Clean Up Junk Removal  
-Junk Removal • Exterior Window Cleaning • Exterior Power Washing  
-Serving All of Westchester  
+Junk Removal • Exterior Window Cleaning • Exterior Pressure Washing  
+Serving Rye, Westchester, Greenwich CT & nearby areas  
 Phone: 914-306-3677
+
+## Payments
+
+Zelle • Venmo • Checks • Cash
 
 ## Pages
 

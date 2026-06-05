@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clean Up Junk Removal | Westchester Junk Removal</title>
-  <meta name="description" content="Junk removal, exterior window cleaning, and exterior pressure washing across Westchester." />
+  <title>Clean Up Junk Removal | Rye & Westchester Junk Removal</title>
+  <meta name="description" content="Junk removal, exterior window cleaning, and exterior pressure washing serving Rye, Westchester, Greenwich CT, and nearby areas." />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
@@ -28,16 +28,7 @@
       </span>
     </a>
 
-    
-<nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="junk-removal.html">Junk Removal</a>
-  <a href="window-cleaning.html">Windows</a>
-  <a href="power-washing.html">Pressure Washing</a>
-  <a href="pricing.html" class="nav-cta nav-pricing">Pricing</a>
-  <a href="contact.html" class="nav-cta nav-quote">Quote</a>
-</nav>
-
+    <nav class="nav"><a href="index.html" class="active ".strip()>Home</a><a href="junk-removal.html" class="".strip()>Junk Removal</a><a href="window-cleaning.html" class="".strip()>Windows</a><a href="power-washing.html" class="".strip()>Pressure Washing</a><a href="pricing.html" class="nav-cta nav-pricing".strip()>Pricing</a><a href="contact.html" class="nav-cta nav-quote".strip()>Quote</a></nav>
 
     <a class="phone" href="tel:9143063677">914-306-3677</a>
 
@@ -45,12 +36,12 @@
   </header>
 
 
-  <main class="homepage-compact">
-    <section class="hero compact-hero">
-      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1698917414969-feade59e3343?auto=format&fit=crop&w=1800&q=85');"></div>
+  <main>
+    <section class="hero">
+      <div class="hero-bg" style="background-image:url('assets/img/junk-removal-pro.jpg');"></div>
 
       <div class="container hero-content reveal">
-        <div class="pill">Free photo quotes • Serving Rye, Westchester, Greenwich CT & nearby areas</div>
+        <div class="pill">Free photo quotes • Serving Rye, Westchester & nearby CT</div>
         <p class="eyebrow">Junk Removal Done Best</p>
         <h1>Junk gone fast. Exterior cleaned when needed.</h1>
         <p class="hero-text">
@@ -72,14 +63,65 @@
       </div>
     </section>
 
-    <section class="section compact-section">
+    <section class="section tight">
+      <div class="container">
+        <div class="quick-quote-strip reveal">
+          <div>
+            <p class="eyebrow">Fastest Way To Get A Price</p>
+            <h2>Send photos and your town.</h2>
+            <p>Photos help us quote faster and more accurately. You approve the final price before work starts.</p>
+          </div>
+          <a class="btn gold" href="contact.html">Build Quote Text</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section premium-photo-section">
+      <div class="container">
+        <div class="heading center reveal">
+          <p class="eyebrow">Professional Service Photos</p>
+          <h2>Cleaner photos that actually match the work.</h2>
+          <p>
+            The site now uses a tighter photo set for junk removal, exterior window cleaning,
+            and pressure washing. These are stored inside the website files so they load more reliably.
+          </p>
+        </div>
+
+        <div class="premium-photo-layout reveal">
+          <a href="junk-removal.html" class="premium-photo-feature">
+            <div class="premium-photo-image" style="background-image:url('assets/img/junk-removal-pro.jpg');"></div>
+            <div class="premium-photo-text">
+              <span>Best Service</span>
+              <h3>Junk Removal</h3>
+              <p>Furniture, cleanouts, move-outs, storage units, and bulky junk.</p>
+            </div>
+          </a>
+
+          <div class="premium-photo-side">
+            <a href="window-cleaning.html" class="premium-photo-small">
+              <div style="background-image:url('assets/img/exterior-window-cleaning-pro.jpg');"></div>
+              <strong>Exterior Window Cleaning</strong>
+              <span>Outside-facing glass, screens, and sills.</span>
+            </a>
+
+            <a href="power-washing.html" class="premium-photo-small">
+              <div style="background-image:url('assets/img/pressure-washing-pro.jpg');"></div>
+              <strong>Pressure Washing</strong>
+              <span>Driveways, patios, walkways, and exterior hard surfaces.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section tight">
       <div class="container">
         <div class="heading reveal">
           <p class="eyebrow">Click a Service</p>
           <h2>Pick what you need.</h2>
-          <p>
-            This section now works correctly. Click each service and the photo, details, and pricing link update.
-          </p>
+          <p>Interactive service cards update the photo, details, and correct pricing link.</p>
         </div>
 
         <div class="service-switch reveal">
@@ -98,21 +140,18 @@
 
             <button class="switch-tab" data-service="washing">
               <span>03</span>
-              <strong>Exterior Pressure Washing</strong>
+              <strong>Pressure Washing</strong>
               <small>Driveways, patios, walkways</small>
             </button>
           </div>
 
           <div class="switch-display">
-            <div class="switch-photo" id="servicePhoto" style="background-image:url('https://images.unsplash.com/photo-1698917414969-feade59e3343?auto=format&fit=crop&w=1800&q=85');"></div>
+            <div class="switch-photo" id="servicePhoto" style="background-image:url('assets/img/junk-removal-pro.jpg');"></div>
 
             <div class="switch-copy">
               <p class="eyebrow" id="serviceEyebrow">Junk Removal Done Best</p>
               <h3 id="serviceTitle">Furniture, cleanouts, move-outs, and bulky junk.</h3>
-              <p id="serviceText">
-                Send photos of what needs to go. We quote based on job size, access, labor, weight, distance, and disposal fees.
-              </p>
-
+              <p id="serviceText">Send photos of what needs to go. We quote based on job size, access, labor, weight, distance, and disposal fees.</p>
               <ul id="serviceList">
                 <li>Furniture and mattresses</li>
                 <li>Garage and basement junk</li>
@@ -130,48 +169,75 @@
       </div>
     </section>
 
-    
-
-    <section class="section compact-section">
+    <section class="section soft">
       <div class="container">
         <div class="heading center reveal">
-          <p class="eyebrow">Fast Start</p>
-          <h2>Make it easy to book.</h2>
+          <p class="eyebrow">Professional Services</p>
+          <h2>Clear choices. Easy next step.</h2>
         </div>
 
-        <div class="cards">
-          <article class="card reveal">
-            <div class="card-body">
-              <span class="tag goldtag">Best First Step</span>
-              <h3>Try the Price Helper</h3>
-              <p>Get a rough range for junk removal, exterior windows, or exterior pressure washing.</p>
-              <a class="card-link" href="pricing.html#estimate">Open estimator →</a>
+        <div class="pro-photo-grid">
+          <a class="pro-photo-card reveal" href="junk-removal.html">
+            <div class="pro-photo" style="background-image:url('assets/img/junk-removal-pro.jpg');"></div>
+            <div class="pro-photo-copy">
+              <span>Junk Removal</span>
+              <h3>Furniture, cleanouts, and bulky junk</h3>
+              <p>Best for customers who need items gone fast without dealing with the mess.</p>
             </div>
+          </a>
+
+          <a class="pro-photo-card reveal" href="window-cleaning.html">
+            <div class="pro-photo" style="background-image:url('assets/img/exterior-window-cleaning-pro.jpg');"></div>
+            <div class="pro-photo-copy">
+              <span>Exterior Windows</span>
+              <h3>Outside-facing glass and screens</h3>
+              <p>Good add-on when the outside of the property needs a cleaner look.</p>
+            </div>
+          </a>
+
+          <a class="pro-photo-card reveal" href="power-washing.html">
+            <div class="pro-photo" style="background-image:url('assets/img/pressure-washing-pro.jpg');"></div>
+            <div class="pro-photo-copy">
+              <span>Pressure Washing</span>
+              <h3>Driveways, patios, and walkways</h3>
+              <p>Exterior hard surfaces quoted by size, access, and condition.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <div class="heading center reveal">
+          <p class="eyebrow">How It Works</p>
+          <h2>Simple for the customer.</h2>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="tag goldtag">Step 1</span>
+            <h3>Send photos</h3>
+            <p>Show what needs to go, your town, stairs/access info, and preferred timing.</p>
           </article>
 
-          <article class="card reveal">
-            <div class="card-body">
-              <span class="tag teal">Fast Quote</span>
-              <h3>Text Photos</h3>
-              <p>Photos make the quote faster and more accurate.</p>
-              <a class="card-link" href="contact.html">Build quote text →</a>
-            </div>
+          <article class="step reveal">
+            <span class="tag teal">Step 2</span>
+            <h3>Get a quote</h3>
+            <p>You get a clear price or range before the job starts.</p>
           </article>
 
-          <article class="card reveal">
-            <div class="card-body">
-              <span class="tag">Service Area</span>
-              <h3>Westchester</h3>
-              <p>Rye, Port Chester, White Plains, Harrison, Mamaroneck, Yonkers, and nearby towns.</p>
-              <a class="card-link" href="contact.html">Check availability →</a>
-            </div>
+          <article class="step reveal">
+            <span class="tag">Step 3</span>
+            <h3>We handle it</h3>
+            <p>We remove, load, haul, and leave the area cleaner.</p>
           </article>
         </div>
       </div>
     </section>
 
-    
-    <section class="section soft real-reviews" id="reviews">
+
+    <section class="section soft" id="reviews">
       <div class="container">
         <div class="heading center reveal">
           <p class="eyebrow">Customer Reviews</p>
@@ -185,11 +251,7 @@
               <span class="review-service">Window Cleaning</span>
               <div class="stars">★★★★★</div>
             </div>
-            <p>
-              They did a great job cleaning my windows. I honestly didn’t realize how dirty they were until they were done —
-              everything looks so much brighter now. They were on time, easy to work with, and really took their time.
-              I’d definitely call them again.
-            </p>
+            <p>They did a great job cleaning my windows. I honestly didn’t realize how dirty they were until they were done — everything looks so much brighter now. They were on time, easy to work with, and really took their time. I’d definitely call them again.</p>
           </article>
 
           <article class="review reveal">
@@ -197,10 +259,7 @@
               <span class="review-service">Junk Removal</span>
               <div class="stars">★★★★★</div>
             </div>
-            <p>
-              Super easy experience from start to finish. They showed up when they said they would, got everything loaded quickly,
-              and didn’t leave a mess behind. It was such a relief to finally get rid of all that junk. Really nice crew too.
-            </p>
+            <p>Super easy experience from start to finish. They showed up when they said they would, got everything loaded quickly, and didn’t leave a mess behind. It was such a relief to finally get rid of all that junk. Really nice crew too.</p>
           </article>
 
           <article class="review reveal">
@@ -208,17 +267,14 @@
               <span class="review-service">Pressure Washing</span>
               <div class="stars">★★★★★</div>
             </div>
-            <p>
-              The pressure washing came out awesome. My driveway and siding look way better than I expected, honestly almost like new.
-              They were friendly, careful around the house, and got the job done fast. Definitely worth it.
-            </p>
+            <p>The pressure washing came out awesome. My driveway and siding look way better than I expected, honestly almost like new. They were friendly, careful around the house, and got the job done fast. Definitely worth it.</p>
           </article>
         </div>
       </div>
     </section>
 
 
-    <section class="final compact-final">
+    <section class="final">
       <div class="container reveal">
         <p class="eyebrow">Free Quotes</p>
         <h2>Need junk gone?</h2>
