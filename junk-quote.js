@@ -19,6 +19,7 @@
   }
 
   function setStatus(message, type) {
+    if (!statusBox) return;
     statusBox.classList.remove("loading", "success", "error");
     if (type) statusBox.classList.add(type);
     statusBox.textContent = message;
@@ -55,12 +56,15 @@
     parts.push("Load size: " + (value("qJunkSize") || "Not provided"));
     parts.push("Access: " + (value("qAccess") || "Not provided"));
     parts.push("Heavy items: " + (value("qHeavyItems") || "Not provided"));
+    parts.push("Property type: " + (value("qPropertyType") || "Not provided"));
     parts.push("Customer notes: " + (value("qDetails") || "Not provided"));
 
     return parts.join("\\n");
   }
 
   function updatePreview() {
+    if (!preview) return;
+
     const text =
 `Service: Junk Removal
 Priority: ${isHotLead() ? "Hot Lead - respond quickly" : "Normal"}
@@ -82,6 +86,8 @@ Photos selected: ${files().length}`;
   }
 
   function renderPhotos() {
+    if (!photoPreview) return;
+
     const selected = files();
 
     if (!selected.length) {
@@ -95,9 +101,14 @@ Photos selected: ${files().length}`;
       return `<img src="${url}" alt="Selected junk removal photo">`;
     }).join("");
 
+    const extra = selected.length > MAX_PHOTOS
+      ? `<p><strong>${selected.length - MAX_PHOTOS} extra photo${selected.length - MAX_PHOTOS === 1 ? "" : "s"} not attached.</strong> Upload up to ${MAX_PHOTOS} photos per quote request.</p>`
+      : "";
+
     photoPreview.innerHTML = `
-      <p><strong>${shown.length} photo${shown.length === 1 ? "" : "s"} selected.</strong> Upload up to ${MAX_PHOTOS} photos.</p>
+      <p><strong>${shown.length} photo${shown.length === 1 ? "" : "s"} selected.</strong> Photos help us quote faster.</p>
       <div class="photo-grid">${html}</div>
+      ${extra}
     `;
   }
 
@@ -209,14 +220,14 @@ Photos selected: ${files().length}`;
     const backendUrl = window.CLEANUP_BACKEND_URL;
 
     if (!backendUrl) {
-      setStatus("Backend is not connected yet. Please call instead.", "error");
+      setStatus("Quote system is not connected yet. Please call instead.", "error");
       return;
     }
 
     try {
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
-      setStatus("Submitting junk removal quote request...", "loading");
+      setStatus("Submitting your junk removal quote request...", "loading");
 
       const payload = await buildPayload();
 

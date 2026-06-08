@@ -4,34 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Free Junk Removal Quote | Clean Up Junk Removal</title>
-  <meta name="description" content="Submit a free junk removal quote request with photos for furniture removal, mattresses, cleanouts, garage junk, and bulky items.">
+  <meta name="description" content="Submit a free junk removal quote request with photos for furniture removal, mattresses, garage junk, cleanouts, and bulky items.">
   <link rel="stylesheet" href="junk-only.css">
   <script src="backend-config.js"></script>
   <script defer src="junk-quote.js"></script>
 </head>
 <body>
   <div class="topbar">
-    <span>Junk Removal Only</span>
-    <span>Serving all of Westchester, Rye, Greenwich CT & nearby areas</span>
+    <span>Fast Local Junk Removal</span>
+    <span>Serving Rye, Westchester, Greenwich CT & nearby towns</span>
     <span><a href="tel:9143063677">Call 914-306-3677</a></span>
   </div>
 
   <header class="header">
-    <a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="Clean Up Junk Removal home">
       <span class="badge">CJ</span>
       <span>
         <strong>Clean Up Junk Removal</strong>
-        <small>Fast local junk removal</small>
+        <small>Junk Removal in Rye & Westchester</small>
       </span>
     </a>
-    
-    <nav class="nav">
-      <a href="index.html" class="">Home</a>
-      <a href="junk-removal.html" class="">Junk Removal</a>
-      <a href="pricing.html" class="">Pricing</a>
-      <a href="contact.html" class="quote active">Quote</a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="" href="index.html">Home</a>
+      <a class="" href="junk-removal.html">Junk Removal</a>
+      <a class="" href="pricing.html">Pricing</a>
+      <a class="" href="protection.html">Protection</a>
+      <a class="quote active" href="contact.html">Get Quote</a>
     </nav>
-    
+
     <a class="phone" href="tel:9143063677">914-306-3677</a>
   </header>
 
@@ -42,12 +43,17 @@
       <div class="heading">
         <p class="eyebrow">Free Junk Removal Quote</p>
         <h2>Submit your junk removal request.</h2>
-        <p>Upload photos if you have them. The request goes into our Google Sheets lead system.</p>
+        <p>Upload photos if you have them. Your request goes directly into our quote system so we can review it quickly.</p>
       </div>
 
       <div class="quote-shell">
         <div class="quote-layout">
           <form class="quote-form" id="junkQuoteForm">
+            <div class="form-section-title">
+              <strong>1. Contact Info</strong>
+              <p>So we know who to contact and where the job is located.</p>
+            </div>
+
             <div class="field-grid">
               <label>Name
                 <input id="qName" type="text" placeholder="Your name" required>
@@ -61,6 +67,24 @@
                 <input id="qTown" type="text" placeholder="Rye, Greenwich, White Plains..." required>
               </label>
 
+              <label>Property type
+                <select id="qPropertyType">
+                  <option>House</option>
+                  <option>Apartment / building</option>
+                  <option>Condo / townhouse</option>
+                  <option>Garage / storage area</option>
+                  <option>Business / commercial</option>
+                  <option>Not sure</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-section-title">
+              <strong>2. Timing</strong>
+              <p>Urgent requests are easier to spot when timing is clear.</p>
+            </div>
+
+            <div class="field-grid">
               <label>Preferred timing
                 <select id="qTiming">
                   <option>Flexible timing</option>
@@ -86,7 +110,14 @@
                   <option>Weekend if available</option>
                 </select>
               </label>
+            </div>
 
+            <div class="form-section-title">
+              <strong>3. Junk Details</strong>
+              <p>Tell us what needs to go and how easy it is to access.</p>
+            </div>
+
+            <div class="field-grid">
               <label>Item type
                 <select id="qItemType">
                   <option>Mixed junk</option>
@@ -124,7 +155,7 @@
                 </select>
               </label>
 
-              <label class="full">Heavy items?
+              <label>Heavy items?
                 <select id="qHeavyItems">
                   <option>No major heavy items</option>
                   <option>One heavy item</option>
@@ -157,9 +188,14 @@
           </form>
 
           <aside class="quote-preview">
-            <p class="eyebrow">Live Preview</p>
-            <h2 style="color:white;margin-top:0;">Quote request</h2>
+            <p class="eyebrow">Review</p>
+            <h2>Your quote request</h2>
             <div class="preview-box" id="quotePreview"></div>
+
+            <div class="preview-tip">
+              <strong>Tip for faster quotes</strong>
+              <p>Take one wide photo of everything, one closer photo, and one photo showing stairs or access if there are any.</p>
+            </div>
           </aside>
         </div>
       </div>
@@ -168,14 +204,26 @@
 </main>
 
 
+  <div class="mobile-sticky">
+    <a href="contact.html">Get Quote</a>
+    <a href="tel:9143063677">Call Now</a>
+  </div>
+
   <footer class="footer">
     <div>
       <strong>Clean Up Junk Removal</strong>
-      <p>Junk Removal • Cleanouts • Furniture Removal • Bulk Item Removal</p>
-      <p>Serving all of Westchester, Rye, Greenwich CT & nearby areas</p>
+      <p>Furniture Removal • Mattress Removal • Garage Cleanouts • Move-Out Junk • Bulk Item Removal</p>
+      <p>Serving Rye, Westchester County, Greenwich CT, and nearby towns.</p>
       <p>Payments accepted: Zelle • Venmo • Checks • Cash</p>
     </div>
-    <a href="tel:9143063677">914-306-3677</a>
+
+    <div class="footer-links">
+      <a href="junk-removal.html">Junk Removal</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="protection.html">Protection</a>
+      <a href="contact.html">Quote</a>
+      <a href="tel:9143063677">914-306-3677</a>
+    </div>
   </footer>
 </body>
 </html>
