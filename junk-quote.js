@@ -19,7 +19,6 @@
   }
 
   function setStatus(message, type) {
-    if (!statusBox) return;
     statusBox.classList.remove("loading", "success", "error");
     if (type) statusBox.classList.add(type);
     statusBox.textContent = message;
@@ -51,20 +50,16 @@
 
   function buildDetails() {
     const parts = [];
-
     parts.push("Item type: " + (value("qItemType") || "Not provided"));
     parts.push("Load size: " + (value("qJunkSize") || "Not provided"));
     parts.push("Access: " + (value("qAccess") || "Not provided"));
     parts.push("Heavy items: " + (value("qHeavyItems") || "Not provided"));
     parts.push("Property type: " + (value("qPropertyType") || "Not provided"));
     parts.push("Customer notes: " + (value("qDetails") || "Not provided"));
-
     return parts.join("\\n");
   }
 
   function updatePreview() {
-    if (!preview) return;
-
     const text =
 `Service: Junk Removal
 Priority: ${isHotLead() ? "Hot Lead - respond quickly" : "Normal"}
@@ -86,12 +81,10 @@ Photos selected: ${files().length}`;
   }
 
   function renderPhotos() {
-    if (!photoPreview) return;
-
     const selected = files();
 
     if (!selected.length) {
-      photoPreview.innerHTML = "<p>No photos selected yet.</p>";
+      photoPreview.innerHTML = "<p>No photos selected yet. Photos are optional, but they help us quote faster.</p>";
       return;
     }
 
@@ -102,11 +95,11 @@ Photos selected: ${files().length}`;
     }).join("");
 
     const extra = selected.length > MAX_PHOTOS
-      ? `<p><strong>${selected.length - MAX_PHOTOS} extra photo${selected.length - MAX_PHOTOS === 1 ? "" : "s"} not attached.</strong> Upload up to ${MAX_PHOTOS} photos per quote request.</p>`
+      ? `<p><strong>${selected.length - MAX_PHOTOS} extra photo${selected.length - MAX_PHOTOS === 1 ? "" : "s"} not attached.</strong> Upload up to ${MAX_PHOTOS} photos per request.</p>`
       : "";
 
     photoPreview.innerHTML = `
-      <p><strong>${shown.length} photo${shown.length === 1 ? "" : "s"} selected.</strong> Photos help us quote faster.</p>
+      <p><strong>${shown.length} photo${shown.length === 1 ? "" : "s"} selected.</strong> We’ll use these only to review the quote.</p>
       <div class="photo-grid">${html}</div>
       ${extra}
     `;
@@ -166,7 +159,6 @@ Photos selected: ${files().length}`;
 
   function validate() {
     const missing = [];
-
     if (!value("qName")) missing.push("name");
     if (!value("qPhone")) missing.push("phone number");
     if (!value("qTown")) missing.push("town");
@@ -256,12 +248,10 @@ Photos selected: ${files().length}`;
   form.addEventListener("change", updatePreview);
   form.addEventListener("submit", submitQuote);
 
-  if (photoInput) {
-    photoInput.addEventListener("change", () => {
-      renderPhotos();
-      updatePreview();
-    });
-  }
+  photoInput.addEventListener("change", () => {
+    renderPhotos();
+    updatePreview();
+  });
 
   renderPhotos();
   updatePreview();
