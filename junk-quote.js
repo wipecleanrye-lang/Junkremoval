@@ -19,6 +19,7 @@
   }
 
   function setStatus(message, type) {
+    if (!statusBox) return;
     statusBox.classList.remove("loading", "success", "error");
     if (type) statusBox.classList.add(type);
     statusBox.textContent = message;
@@ -29,62 +30,42 @@
     return Array.from(photoInput.files).filter(file => file.type.startsWith("image/"));
   }
 
-  function isHotLead() {
-    const timing = value("qTiming").toLowerCase();
-    const requestedDate = value("qRequestedDate");
-
-    if (["asap", "today", "tomorrow", "this week", "soon", "next available"].some(word => timing.includes(word))) {
-      return true;
-    }
-
-    if (requestedDate) {
-      const today = new Date();
-      const req = new Date(requestedDate + "T00:00:00");
-      const start = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const diff = Math.ceil((req - start) / (1000 * 60 * 60 * 24));
-      return diff <= 7;
-    }
-
-    return false;
-  }
-
   function buildDetails() {
-    const parts = [];
-    parts.push("Item type: " + (value("qItemType") || "Not provided"));
-    parts.push("Load size: " + (value("qJunkSize") || "Not provided"));
-    parts.push("Access: " + (value("qAccess") || "Not provided"));
-    parts.push("Heavy items: " + (value("qHeavyItems") || "Not provided"));
-    parts.push("Property type: " + (value("qPropertyType") || "Not provided"));
-    parts.push("Customer notes: " + (value("qDetails") || "Not provided"));
-    return parts.join("\\n");
+    return [
+      "Property type: " + (value("qPropertyType") || "Not provided"),
+      "Best time of day: " + (value("qRequestedTime") || "Flexible"),
+      "Photos selected: " + files().length,
+      "Photos are highly requested for faster quote review."
+    ].join("\\n");
   }
 
   function updatePreview() {
+    if (!preview) return;
+
+    const selectedPhotos = files().length;
+
     const text =
 `Service: Junk Removal
-Priority: ${isHotLead() ? "Hot Lead - respond quickly" : "Normal"}
 
 Name: ${value("qName") || "[Name]"}
 Phone: ${value("qPhone") || "[Phone]"}
 Town: ${value("qTown") || "[Town]"}
-
-Preferred timing: ${value("qTiming") || "Flexible"}
-Requested date: ${value("qRequestedDate") || "Not selected"}
+Property type: ${value("qPropertyType") || "Not selected"}
 Best time: ${value("qRequestedTime") || "Flexible"}
 
-Junk details:
-${buildDetails()}
-
-Photos selected: ${files().length}`;
+Photos selected: ${selectedPhotos}
+Photo status: ${selectedPhotos > 0 ? "Photos added - easier to quote" : "No photos yet - photos are highly requested"}`;
 
     preview.textContent = text;
   }
 
   function renderPhotos() {
+    if (!photoPreview) return;
+
     const selected = files();
 
     if (!selected.length) {
-      photoPreview.innerHTML = "<p>No photos selected yet. Photos are optional, but they help us quote faster.</p>";
+      photoPreview.innerHTML = "<p>No photos selected yet. <strong>Photos are highly requested</strong> because they help us quote faster.</p>";
       return;
     }
 
@@ -95,11 +76,11 @@ Photos selected: ${files().length}`;
     }).join("");
 
     const extra = selected.length > MAX_PHOTOS
-      ? `<p><strong>${selected.length - MAX_PHOTOS} extra photo${selected.length - MAX_PHOTOS === 1 ? "" : "s"} not attached.</strong> Upload up to ${MAX_PHOTOS} photos per request.</p>`
+      ? `<p><strong>${selected.length - MAX_PHOTOS} extra photo${selected.length - MAX_PHOTOS === 1 ? "" : "s"} not attached.</strong> Upload up to ${MAX_PHOTOS} photos per quote request.</p>`
       : "";
 
     photoPreview.innerHTML = `
-      <p><strong>${shown.length} photo${shown.length === 1 ? "" : "s"} selected.</strong> We’ll use these only to review the quote.</p>
+      <p><strong>${shown.length} photo${shown.length === 1 ? "" : "s"} selected.</strong> This helps us give a faster quote.</p>
       <div class="photo-grid">${html}</div>
       ${extra}
     `;
@@ -159,6 +140,7 @@ Photos selected: ${files().length}`;
 
   function validate() {
     const missing = [];
+
     if (!value("qName")) missing.push("name");
     if (!value("qPhone")) missing.push("phone number");
     if (!value("qTown")) missing.push("town");
@@ -187,17 +169,17 @@ Photos selected: ${files().length}`;
       phone: value("qPhone"),
       town: value("qTown"),
       service: "Junk Removal",
-      timing: value("qTiming"),
-      requestedDate: value("qRequestedDate"),
+      timing: "",
+      requestedDate: "",
       requestedTime: value("qRequestedTime"),
-      junkSize: value("qJunkSize"),
-      access: value("qAccess"),
+      junkSize: "",
+      access: "",
       windowCount: "",
       windowExtras: "",
       washSurface: "",
       washCondition: "",
       details: buildDetails(),
-      priorityHint: isHotLead() ? "Hot" : "Normal",
+      priorityHint: photos.length > 0 ? "Photos Added" : "No Photos",
       submittedAt: new Date().toISOString(),
       userAgent: navigator.userAgent,
       photos
@@ -219,7 +201,7 @@ Photos selected: ${files().length}`;
     try {
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
-      setStatus("Submitting your junk removal quote request...", "loading");
+      setStatus("Submitting your quote request...", "loading");
 
       const payload = await buildPayload();
 
@@ -248,10 +230,12 @@ Photos selected: ${files().length}`;
   form.addEventListener("change", updatePreview);
   form.addEventListener("submit", submitQuote);
 
-  photoInput.addEventListener("change", () => {
-    renderPhotos();
-    updatePreview();
-  });
+  if (photoInput) {
+    photoInput.addEventListener("change", () => {
+      renderPhotos();
+      updatePreview();
+    });
+  }
 
   renderPhotos();
   updatePreview();

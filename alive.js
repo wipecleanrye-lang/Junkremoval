@@ -250,13 +250,18 @@
     const isPricing = location.pathname.includes("pricing");
 
     if ((isHome || isPricing) && !$(".alive-estimator-section")) {
-      const cta = $(".cta-band");
       if (isPricing) {
         main.insertAdjacentHTML("beforeend", estimatorHTML());
-      } else if (cta) {
-        cta.insertAdjacentHTML("afterend", estimatorHTML());
       } else {
-        main.insertAdjacentHTML("beforeend", estimatorHTML());
+        const reviewSection = Array.from(document.querySelectorAll("section")).find((section) => {
+          return section.textContent.includes("Customer Feedback") || section.textContent.includes("People want simple, fast, and clean");
+        });
+
+        if (reviewSection) {
+          reviewSection.insertAdjacentHTML("beforebegin", estimatorHTML());
+        } else {
+          main.insertAdjacentHTML("beforeend", estimatorHTML());
+        }
       }
     }
 
@@ -311,7 +316,7 @@
           qJunkSize: values.size,
           qAccess: values.access,
           qHeavyItems: values.heavy,
-          qDetails: `Estimator range shown: $${result.low}–$${result.high}. Please review with photos and final job details.`
+          qRequestedTime: `Estimator range shown: $${result.low}–$${result.high}. Please review with photos and final job details.`
         }));
 
         toast("Estimate saved — opening quote form.");

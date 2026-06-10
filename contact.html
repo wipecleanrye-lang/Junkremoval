@@ -41,13 +41,15 @@
     </header>
 
     
+
+
 <main>
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-card">
         <p class="eyebrow">Free Quote</p>
         <h1>Send the details once. We’ll review the job.</h1>
-        <p>Upload photos if you have them. Your request goes directly into our quote system so we can review the job, timing, access, and photos clearly.</p>
+        <p>Upload photos if you have them. Photos are highly requested because they help us give a faster and more accurate quote.</p>
       </div>
     </div>
   </section>
@@ -84,31 +86,8 @@
                     <option>Not sure</option>
                   </select>
                 </label>
-              </div>
-            </div>
 
-            <div class="form-block">
-              <h3>2. Timing</h3>
-              <p>Urgent requests are easier to handle when timing is clear.</p>
-
-              <div class="field-grid">
-                <label>Preferred timing
-                  <select id="qTiming">
-                    <option>Flexible timing</option>
-                    <option>ASAP if available</option>
-                    <option>Today if available</option>
-                    <option>Tomorrow if available</option>
-                    <option>This week if available</option>
-                    <option>Next available opening</option>
-                    <option>Weekend if available</option>
-                  </select>
-                </label>
-
-                <label>Requested date
-                  <input id="qRequestedDate" type="date">
-                </label>
-
-                <label>Best time of day
+                <label class="full">Best time of day
                   <select id="qRequestedTime">
                     <option>Flexible</option>
                     <option>Morning</option>
@@ -121,67 +100,15 @@
             </div>
 
             <div class="form-block">
-              <h3>3. Junk Details</h3>
-              <p>Tell us what needs to go and how easy it is to access.</p>
+              <h3>2. Photos <span class="highly-requested">Highly Requested</span></h3>
+              <p>Photos help us see the size of the job, the items, stairs, access, and how much space the junk takes up.</p>
 
-              <div class="field-grid">
-                <label>Item type
-                  <select id="qItemType">
-                    <option>Mixed junk</option>
-                    <option>Furniture</option>
-                    <option>Mattress / box spring</option>
-                    <option>Garage junk</option>
-                    <option>Move-out junk</option>
-                    <option>Storage clutter</option>
-                    <option>Cleanout</option>
-                    <option>Other</option>
-                  </select>
-                </label>
-
-                <label>Load size
-                  <select id="qJunkSize">
-                    <option>Minimum pickup</option>
-                    <option>Single large item</option>
-                    <option>Small pickup</option>
-                    <option>Medium load</option>
-                    <option>Large load</option>
-                    <option>Full load</option>
-                    <option>Cleanout</option>
-                    <option>Not sure</option>
-                  </select>
-                </label>
-
-                <label>Access
-                  <select id="qAccess">
-                    <option>Curbside / easy access</option>
-                    <option>Inside pickup</option>
-                    <option>Stairs involved</option>
-                    <option>Long carry</option>
-                    <option>Heavy items</option>
-                    <option>Mixed access</option>
-                  </select>
-                </label>
-
-                <label>Heavy items?
-                  <select id="qHeavyItems">
-                    <option>No major heavy items</option>
-                    <option>One heavy item</option>
-                    <option>Multiple heavy items</option>
-                    <option>Not sure</option>
-                  </select>
-                </label>
-
-                <label class="full">Job details
-                  <textarea id="qDetails" placeholder="Example: couch and mattress inside apartment, 1 flight of stairs, flexible this week."></textarea>
-                </label>
-
-                <label class="full">Upload photos
-                  <input id="qPhotos" type="file" accept="image/*" multiple>
-                </label>
-              </div>
+              <label class="full">Upload photos
+                <input id="qPhotos" type="file" accept="image/*" multiple>
+              </label>
 
               <div class="photo-preview" id="photoPreview">
-                <p>No photos selected yet.</p>
+                <p>No photos selected yet. Photos are highly requested for faster quotes.</p>
               </div>
 
               <div class="quote-actions">
@@ -190,7 +117,7 @@
               </div>
 
               <div class="status" id="quoteStatus">
-                No payment is required to request a quote. Photos are used only to review the job.
+                No payment is required to request a quote. Photos are highly requested and used only to review the job.
               </div>
             </div>
           </form>
@@ -201,7 +128,7 @@
             <div class="preview-box" id="quotePreview"></div>
 
             <div class="preview-note">
-              <strong>Tip for faster quotes</strong>
+              <strong>Best photos to upload</strong>
               <p>Take one wide photo of everything, one closer photo, and one photo showing stairs or access if there are any.</p>
             </div>
           </aside>
@@ -210,6 +137,8 @@
     </div>
   </section>
 </main>
+
+
 
 
     <footer class="footer">
